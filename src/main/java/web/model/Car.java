@@ -43,6 +43,4 @@ public class Car {
 	public String toString() {
 		return "Car [version=" + series + ", name=" + name + ", date=" + date + "]";
 	}
-	
-	
 }

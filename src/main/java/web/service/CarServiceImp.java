@@ -19,7 +19,7 @@ public class CarServiceImp implements CarService{
 	}
 	
 	public List<Car> getCars(Integer count){
-		if(count == null)
+		if(count == 5 || count > 5)
 			return getAll();
 		else
 			return getByCount(count);
@@ -27,10 +27,8 @@ public class CarServiceImp implements CarService{
 
 
 	private List<Car> getByCount(Integer count) {
-		if (count <= 0)
-			throw new RuntimeException("The number must be greater than or equal to 1.");
-		else if(count == 5 || count > 5) {
-			return carDaoImpl.getAll();
+		if (count <= 0) {
+			throw new IllegalArgumentException("The number must be greater than or equal to 1.");
 		}else {
 			return carDaoImpl.getByCount(count);
 		}

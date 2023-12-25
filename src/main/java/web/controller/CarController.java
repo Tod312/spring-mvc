@@ -22,7 +22,7 @@ public class CarController {
 
 	@GetMapping("/cars")
 	public String getCarsByCount(ModelMap model,
-			@RequestParam(name = "count", required = false) Integer count) {
+			@RequestParam(name = "count", defaultValue = "5") Integer count) {
 		
 		System.out.println(count);
 		model.addAttribute("cars", carService.getCars(count));
